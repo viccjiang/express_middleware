@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "eb997d40-aecf-466b-a877-f3c9844969c1",
+		"name": "week6-mongoose-express-middleware-render",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19843147",
+		"_collection_link": "https://martian-capsule-262445.postman.co/workspace/My-Workspace~77fd6e3f-fc13-4924-87b5-63e25cb2e01e/collection/19843147-eb997d40-aecf-466b-a877-f3c9844969c1?action=share&source=collection_link&creator=19843147"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "註冊",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"\",\r\n    \"email\":\"\",\r\n    \"password\":\"\",\r\n    \"confirmPassword\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://express-middleware.onrender.com/users/sign_up",
+							"protocol": "https",
+							"host": [
+								"express-middleware",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"sign_up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登入",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"\",\r\n    \"password\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://express-middleware.onrender.com/users/sign_in",
+							"protocol": "https",
+							"host": [
+								"express-middleware",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"sign_in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "檢視個人資訊",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://express-middleware.onrender.com/users/profile",
+							"protocol": "https",
+							"host": [
+								"express-middleware",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更新個人資訊",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"sex\": \"\",\r\n    \"photo\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://express-middleware.onrender.com/users/profile",
+							"protocol": "https",
+							"host": [
+								"express-middleware",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更新密碼",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"\",\r\n    \"confirmPassword\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://express-middleware.onrender.com/users/updatePassword",
+							"protocol": "https",
+							"host": [
+								"express-middleware",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"users",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "取得所有貼文",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://express-middleware.onrender.com/posts",
+							"protocol": "https",
+							"host": [
+								"express-middleware",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "003",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增單筆貼文",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\": \"663045d284af0ffb8a0f987a\",\r\n  \"content\": \" new post\",\r\n  \"photo\": \"https://images.unsplash.com/photo-1713815540105-9cc73ccd4290?q=80&w=2091&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://express-middleware.onrender.com/posts",
+							"protocol": "https",
+							"host": [
+								"express-middleware",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "刪除全部貼文",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://express-middleware.onrender.com/posts",
+							"protocol": "https",
+							"host": [
+								"express-middleware",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "刪除單筆貼文",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://express-middleware.onrender.com/posts/663045e4efb3ddcf1ded87e4",
+							"protocol": "https",
+							"host": [
+								"express-middleware",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts",
+								"663045e4efb3ddcf1ded87e4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "編輯單筆貼文",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"content\": \"new post fix\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://express-middleware.onrender.com/posts/66304620efb3ddcf1ded87e8",
+							"protocol": "https",
+							"host": [
+								"express-middleware",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"posts",
+								"66304620efb3ddcf1ded87e8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
